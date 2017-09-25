@@ -1,2 +1,4 @@
-<app-videochat *ngIf = "true"></app-videochat>
-<!-- <home *ngIf = "false"></home> -->
+
+
+<app-home *ngIf = "isHome" routerLink="home" routerLinkActive="active"  (toggle)="goToChat($event)" ></app-home>
+<app-videochat *ngIf = "isVideoChat" routerLink="chatroom" routerLinkActive="active" (assignRoom) = "changeRoom($event)" ></app-videochat> 

@@ -1,7 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-// import * as OT from '@opentok/client';
-// const opentalk = require('@opentok/client');
-
 
 
 @Component({
@@ -15,14 +12,28 @@ export class VideochatComponent implements OnInit {
   apiKey = ' 45604412';
   sessionId = '123';
   token = 'b2a20a033f42ba9f53727719c146ee049c11a2d6';
-  // OT = new opentalk('apiKey', 'apiSecret');
+  roomNumber  ;
+  tokboxUrl = 'https://tokbox.com/embed/embed/ot-embed.js?' +
+  'embedId=469335ba-1988-488e-903f-d92526a746f8&room=' +
+  this.roomNumber +
+  '&iframe=true';
+
+
+  private changeRoom = (Event) => {
+    this.roomNumber = Event.target.Value;
+  }
+
 
   constructor() {
     this.isVideoChat = true ;
-    this.initializeSession();
    }
 
   ngOnInit() {
+    this.roomNumber = 'Room 1' ;
+    this.tokboxUrl = 'https://tokbox.com/embed/embed/ot-embed.js?' +
+    'embedId=469335ba-1988-488e-903f-d92526a746f8&room=' +
+    this.roomNumber +
+    '&iframe=true';
   }
 
 
@@ -31,19 +42,6 @@ export class VideochatComponent implements OnInit {
   if (error) {
     alert(error.message);
   }
-}
-
- private initializeSession = () => {
-    // const session = OT.initSession('45604412', this.sessionId);
-    // Subscribe to a newly created stream
-    // Create a publisher
-    // const publisher = OT.initPublisher();
-
-    // const publisher = OT.initPublisher('publisher', {
-    //   insertMode: 'append',
-    //   width: '100%',
-    //   height: '100%'
-    // }, this. handleError);
 }
 
 }

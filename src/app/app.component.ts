@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component , Output , EventEmitter } from '@angular/core';
 
 
 @Component({
@@ -8,4 +8,20 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
+  isHome = false ;
+  isVideoChat = false ;
+
+  @Output() assignRoom: EventEmitter<string> = new EventEmitter();
+
+  constructor() {
+   this.isHome = true ;
+   this.isVideoChat = false ;
+  }
+
+  private goToChat = (Event) => {
+    this.isHome = false ;
+    this.isVideoChat = true ;
+    this.assignRoom.emit(Event.target.value) ;
+
+  }
 }

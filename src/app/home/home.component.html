@@ -1,14 +1,14 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
+<div style="text-align:center ; background-color:green;">
+  <h1 style="color:chartreuse">
    GuardianPoc
-  </h1>
+  </h1>  
+  <form>
   <img src="/assets/booyah.jpg"/>
-  <select single >
-    <option value="user1">1</option>
-    <option value="user2">2</option>
-    <option value="user3">3</option>
-    <option value="user4">4</option>
+  <label> Select your Room </label>
+  <select single  >
+    <option *ngFor="let room of rooms" [ngValue]="room">{{room.name}}</option>
   </select>
-  <input value="Start Session" type = "button" /> 
+  <input value="Join Session" type = "button" (click) = 'onJoin($event)'/> 
+  </form>
 </div>
