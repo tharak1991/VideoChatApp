@@ -1,5 +1,9 @@
 # VideoChat Web Application using Angular 4
 
+A videochat web application where 3 or more people can join the chat room.
+
+Tokbox(opentok) is the third party library used for this project.
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.4.2.
 
 ## Development server
